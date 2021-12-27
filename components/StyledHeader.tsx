@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, ImageSourcePropType } from 'react-native';
 import { View } from './Themed';
 
 export default function Header() {
@@ -7,15 +7,18 @@ export default function Header() {
 		<View style={styles.container}>
 			<View style={styles.left}>
 				{/* <FontAwesome size={26} name="code" color="#fff" style={styles.logo} /> */}
-				<Image source={require('../assets/icons/logo512.png')} style={styles.logo} />
+				<Image
+					source={require('../assets/icons/logo512.png') as ImageSourcePropType}
+					style={styles.logo}
+				/>
 			</View>
 			<View style={styles.extras}>
 				<Image
-					source={require('../assets/icons/search.png')}
+					source={require('../assets/icons/search.png') as ImageSourcePropType}
 					style={[styles.icon, { marginRight: 20 }]}
 				/>
 				<Image
-					source={require('../assets/icons/tripledot.png')}
+					source={require('../assets/icons/tripledot.png') as ImageSourcePropType}
 					style={[styles.icon, { marginRight: 24 }]}
 				/>
 			</View>
