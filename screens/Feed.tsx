@@ -2,7 +2,7 @@ import { StyleSheet, SafeAreaView, ScrollView, FlatList, ImageSourcePropType } f
 import GroupBuyCard from '../components/GroupBuyCard';
 import ItemHeader from '../components/ItemHeader';
 import Header from '../components/StyledHeader';
-import { View } from '../components/Themed';
+import { View } from 'react-native';
 import { TitleText } from '../components/TitleText';
 
 const groupBuys = [

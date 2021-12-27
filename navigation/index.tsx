@@ -8,8 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { ColorSchemeName, Image, ImageSourcePropType, Pressable } from 'react-native';
-import { View } from '../components/Themed';
+import { ColorSchemeName, Image, ImageSourcePropType } from 'react-native';
 
 import Feed from '../screens/Feed';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';

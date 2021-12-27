@@ -6,7 +6,7 @@ import {
 	StyleSheet,
 } from 'react-native';
 import { BlurView } from 'expo-blur';
-import { View } from './Themed';
+import { View } from 'react-native';
 import { BoldText } from './StyledText';
 import StyledLabel from './StyledLabel';
 

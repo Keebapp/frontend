@@ -1,6 +1,6 @@
 import { StyleSheet, ViewProps } from 'react-native';
 import TextButton from './TextButton';
-import { View } from './Themed';
+import { View } from 'react-native';
 import { TitleText } from './TitleText';
 
 export default function ItemHeader(props: { title: string; style: object }) {

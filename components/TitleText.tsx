@@ -1,4 +1,4 @@
-import { Text, TextProps } from './Themed';
+import { Text, TextProps } from 'react-native';
 
 export function TitleText(props: TextProps) {
 	return (
