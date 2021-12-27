@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import FlatButton from '../components/StyledButton';
 
 export default function SignUpScreen() {
