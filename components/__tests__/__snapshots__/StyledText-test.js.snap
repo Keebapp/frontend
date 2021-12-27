@@ -4,15 +4,10 @@ exports[`renders correctly 1`] = `
 <Text
   style={
     Array [
+      undefined,
       Object {
-        "color": "#fff",
+        "fontFamily": "SourceSansProRegular",
       },
-      Array [
-        undefined,
-        Object {
-          "fontFamily": "SourceSansProRegular",
-        },
-      ],
     ]
   }
 >

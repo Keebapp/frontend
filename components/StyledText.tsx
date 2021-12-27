@@ -1,4 +1,4 @@
-import { Text, TextProps } from './Themed';
+import { Text, TextProps } from 'react-native';
 
 export function RegularText(props: TextProps) {
 	return <Text {...props} style={[props.style, { fontFamily: 'SourceSansProRegular' }]} />;

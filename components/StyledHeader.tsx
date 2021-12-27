@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Image, ImageSourcePropType } from 'react-native';
-import { View } from './Themed';
+import { View } from 'react-native';
 
 export default function Header() {
 	return (
