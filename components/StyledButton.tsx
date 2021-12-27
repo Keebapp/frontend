@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyleSheet, Pressable } from 'react-native';
 import { RegularText } from './StyledText';
 
