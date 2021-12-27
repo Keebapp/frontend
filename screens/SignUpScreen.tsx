@@ -1,22 +1,21 @@
-import { StyleSheet } from 'react-native';
-import { View } from '../components/Themed';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import FlatButton from '../components/StyledButton';
 
 export default function SignUpScreen() {
 	return (
-		<View style={styles.container}>
+		<SafeAreaView style={styles.container}>
 			<FlatButton text="Sign up" />
-		</View>
+		</SafeAreaView>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		marginVertical: 500,
+		height: '100%',
+		width: '100%',
+		backgroundColor: '#1e1e1e',
 		alignItems: 'center',
 		justifyContent: 'center',
 		position: 'absolute',
-		paddingHorizontal: 44,
 	},
 });
