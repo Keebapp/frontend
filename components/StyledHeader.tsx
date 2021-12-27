@@ -1,25 +1,22 @@
 import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { View } from './Themed';
 
 export default function Header() {
 	return (
 		<View style={styles.container}>
 			<View style={styles.left}>
-				<FontAwesome size={26} name="code" color="#fff" style={styles.logo} />
+				{/* <FontAwesome size={26} name="code" color="#fff" style={styles.logo} /> */}
+				<Image source={require('../assets/icons/logo512.png')} style={styles.logo} />
 			</View>
 			<View style={styles.extras}>
-				<FontAwesome
-					size={24}
-					name="search"
-					color="#fff"
+				<Image
+					source={require('../assets/icons/search.png')}
 					style={[styles.icon, { marginRight: 20 }]}
 				/>
-				<FontAwesome
-					size={24}
-					name="ellipsis-h"
-					color="#fff"
+				<Image
+					source={require('../assets/icons/tripledot.png')}
 					style={[styles.icon, { marginRight: 24 }]}
 				/>
 			</View>
@@ -39,6 +36,8 @@ const styles = StyleSheet.create({
 	},
 	logo: {
 		marginLeft: 24,
+		width: 52,
+		height: 26,
 	},
 	extras: {
 		flexDirection: 'row',
