@@ -3,7 +3,7 @@ import TextButton from './TextButton';
 import { View } from 'react-native';
 import { TitleText } from './TitleText';
 
-export default function ItemHeader(props: { title: string; style: object }) {
+export default function ItemHeader(props: { title: string; style?: object }) {
 	return (
 		<View style={[styles.container, props.style]}>
 			<View style={{ marginLeft: 24, justifyContent: 'center', flex: 1 }}>

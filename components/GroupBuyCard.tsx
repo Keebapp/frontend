@@ -11,7 +11,7 @@ import { BoldText } from './StyledText';
 import StyledLabel from './StyledLabel';
 
 export default function GroupBuyCard(props: {
-	style: object;
+	style?: object;
 	title: string;
 	subTitle: string;
 	image: ImageSourcePropType;
