@@ -1,15 +1,23 @@
-import { StyleSheet, Image, ImageSourcePropType } from 'react-native';
+import {
+	StyleSheet,
+	Image,
+	ImageSourcePropType,
+	GestureResponderEvent,
+	TouchableWithoutFeedback,
+} from 'react-native';
 import { View } from 'react-native';
 
-export default function Header() {
+export default function Header(props: { onPressLogo?: (event: GestureResponderEvent) => void }) {
 	return (
 		<View style={styles.container}>
 			<View style={styles.left}>
 				{/* <FontAwesome size={26} name="code" color="#fff" style={styles.logo} /> */}
-				<Image
-					source={require('../assets/icons/logo512.png') as ImageSourcePropType}
-					style={styles.logo}
-				/>
+				<TouchableWithoutFeedback onPress={props.onPressLogo}>
+					<Image
+						source={require('../assets/icons/logo512.png') as ImageSourcePropType}
+						style={styles.logo}
+					/>
+				</TouchableWithoutFeedback>
 			</View>
 			<View style={styles.extras}>
 				<Image

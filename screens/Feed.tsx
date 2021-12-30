@@ -1,13 +1,21 @@
-import { StyleSheet, SafeAreaView, ScrollView, FlatList, ImageSourcePropType } from 'react-native';
+import {
+	StyleSheet,
+	SafeAreaView,
+	ScrollView,
+	FlatList,
+	ImageSourcePropType,
+	Platform,
+} from 'react-native';
 import GroupBuyCard from '../components/GroupBuyCard';
 import ItemHeader from '../components/ItemHeader';
 import Header from '../components/StyledHeader';
 import { View } from 'react-native';
 import { TitleText } from '../components/TitleText';
 import SegmentedControl from '@react-native-segmented-control/segmented-control';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import NewsListItem from '../components/NewsListItem';
 import VideoCard from '../components/VideoCard';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const groupBuys = [
 	{
@@ -190,10 +198,22 @@ export default function Feed() {
 	const [newsIndex, setNewsIndex] = useState(0);
 	const [videoIndex, setVideoIndex] = useState(0);
 
+	const insets = useSafeAreaInsets();
+
+	const scrollRef = useRef<ScrollView>(null);
+
+	const onPressLogo = () => {
+		scrollRef.current?.scrollTo({
+			y: 0,
+			animated: true,
+		});
+	};
+
 	return (
-		<SafeAreaView style={styles.container}>
-			<Header />
-			<ScrollView nestedScrollEnabled>
+		<SafeAreaView
+			style={[styles.container, { marginTop: Platform.OS == 'android' ? insets.top : 0 }]}>
+			<Header onPressLogo={onPressLogo} />
+			<ScrollView ref={scrollRef}>
 				<ItemHeader style={styles.header} title="Ongoing Groupbuys" />
 				<FlatList
 					style={styles.content}
@@ -231,10 +251,11 @@ export default function Feed() {
 				<ItemHeader style={styles.header} title="Keyboard news" />
 				<SegmentedControl
 					style={styles.segmentPicker}
+					tintColor="#0A84FF"
 					values={['Hot', 'Most read', 'Top this week']}
 					selectedIndex={newsIndex}
 					onChange={(event) => setNewsIndex(event.nativeEvent.selectedSegmentIndex)}
-					fontStyle={{ color: 'grey' }}
+					fontStyle={{ color: '#939394' }}
 					activeFontStyle={{ color: '#f5f5f5' }}
 				/>
 				<FlatList
@@ -255,10 +276,11 @@ export default function Feed() {
 				<ItemHeader style={styles.header} title="Top Community Videos" />
 				<SegmentedControl
 					style={styles.segmentPicker}
+					tintColor="#0A84FF"
 					values={['Today', 'This week', 'All time']}
 					selectedIndex={videoIndex}
 					onChange={(event) => setVideoIndex(event.nativeEvent.selectedSegmentIndex)}
-					fontStyle={{ color: 'grey' }}
+					fontStyle={{ color: '#939394' }}
 					activeFontStyle={{ color: '#f5f5f5' }}
 				/>
 				<FlatList
@@ -276,6 +298,7 @@ export default function Feed() {
 						/>
 					)}
 					horizontal
+					showsHorizontalScrollIndicator={false}
 				/>
 				<View style={{ height: 64 }} />
 			</ScrollView>
@@ -297,7 +320,7 @@ const styles = StyleSheet.create({
 	},
 	segmentPicker: {
 		marginHorizontal: 16,
-		tintColor: 'dodgerblue',
 		marginBottom: 24,
+		backgroundColor: 'rgba(40,40,41,255)',
 	},
 });
