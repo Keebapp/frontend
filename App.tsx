@@ -1,6 +1,8 @@
 import { FontSource, useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Navigation from './navigation';
+import Feed from './screens/Feed';
 import SignUpScreen from './screens/SignUpScreen';
 
 export default function App() {
@@ -17,8 +19,8 @@ export default function App() {
 	} else {
 		return (
 			<SafeAreaProvider>
-				<SignUpScreen />
-				<StatusBar />
+				<Navigation colorScheme="dark" />
+				<StatusBar style="light" />
 			</SafeAreaProvider>
 		);
 	}
