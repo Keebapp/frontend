@@ -11,7 +11,6 @@ export default function Header(props: { onPressLogo?: (event: GestureResponderEv
 	return (
 		<View style={styles.container}>
 			<View style={styles.left}>
-				{/* <FontAwesome size={26} name="code" color="#fff" style={styles.logo} /> */}
 				<TouchableWithoutFeedback onPress={props.onPressLogo}>
 					<Image
 						source={require('../assets/icons/logo512.png') as ImageSourcePropType}
